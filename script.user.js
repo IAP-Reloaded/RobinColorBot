@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         RobinColorBot
 // @namespace    http://simpcraft.com/
-// @version      0.5
+// @version      0.6
 // @description  tells what a username's color is
 // @author       /u/haykam821
 // @match        https://www.reddit.com/robin*
@@ -27,7 +27,7 @@
         var msg = $(mutation.addedNodes[0].lastElementChild).text();
         var regex = /^!cb color (.*)/;
       if(msg.match(regex) && msg.match(regex).length > 0){
-        var u = msg.match(regex)[1];
+        var u = msg.match(regex)[1]
              , e = this.get(u).toLowerCase()
              , t = e.replace(/[^a-z0-9]/g, "") // gets rid of special characters like "_"
              , n = parseInt(t, 36) % f; // f = 6
@@ -46,9 +46,10 @@
             sendMessage('[RobinColorBot] I was created by /u/haykam821.');
 		}
         if(msg.includes('!cb version')) {
-            sendMessage('[RobinColorBot] This bot is running RobinColorBot v0.5.');
+            sendMessage('[RobinColorBot] This bot is running RobinColorBot v0.6.');
 		}
     });
  });
  observer.observe(target, {childList: true});
  }, 20);
+
